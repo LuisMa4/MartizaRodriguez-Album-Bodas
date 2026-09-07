@@ -115,7 +115,7 @@ const CHAPTERS = [
 ];
 
 class Component extends DCLogic {
-  state = { open: false, ch: 0, lb: null };
+  state = { open: false, ch: 0, lb: null, winWidth: typeof window !== 'undefined' ? window.innerWidth : 1280 };
 
   componentDidMount() {
     this._key = (e) => {
@@ -130,8 +130,17 @@ class Component extends DCLogic {
       if (e.key === 'ArrowLeft') this.goCh(this.state.ch - 1);
     };
     window.addEventListener('keydown', this._key);
+    this._resize = () => {
+      clearTimeout(this._resizeT);
+      this._resizeT = setTimeout(() => this.setState({ winWidth: window.innerWidth }), 120);
+    };
+    window.addEventListener('resize', this._resize);
   }
-  componentWillUnmount() { window.removeEventListener('keydown', this._key); }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this._key);
+    window.removeEventListener('resize', this._resize);
+    clearTimeout(this._resizeT);
+  }
 
   goCh(i) {
     if (i < 0 || i >= CHAPTERS.length) return;
@@ -144,7 +153,9 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const min = this.props.tileMin ?? 250;
+    const configuredMin = this.props.tileMin ?? 250;
+    const w = this.state.winWidth;
+    const min = w < 520 ? 115 : w < 900 ? Math.min(configuredMin, 190) : configuredMin;
     const ch = this.state.ch;
     const chap = CHAPTERS[ch];
     const lb = this.state.lb;
