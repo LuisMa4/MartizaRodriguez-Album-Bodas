@@ -101,17 +101,18 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;tileMin&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:250,&quot;min&quot;:180,&quot;max&quot;:420,&quot;step&quot;:10,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Catálogo&quot;}}">
-const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
 const DIR = 'web/bodas/';
 
 const CHAPTERS = [
-  { title: 'Presesión', files: ['IMG_9923','IMG_0072','IMG_0216','IMG_1447','IMG_1461','IMG_1489','IMG_1534','IMG_1552','IMG_1563','IMG_1584','IMG_1635','IMG_1695','IMG_1762','IMG_1816','IMG_0058','IMG_0158','IMG_0167','IMG_1730'] },
-  { title: 'Ceremonia', files: ['IMG_4113','IMG_7378','IMG_4374','IMG_4220','IMG_4288','IMG_4488','IMG_7379','IMG_738','IMG_7346','IMG_7421','IMG_8522','IMG_8542','IMG_7003','IMG_7292','IMG_7285','IMG_7369','IMG_7413','IMG_8500','IMG_8577'] },
-  { title: 'Sesión de pareja', files: ['IMG_3884','IMG_3891','IMG_3937','IMG_3942','IMG_3947','IMG_4000','IMG_4018','IMG_4076','IMG_7774','IMG_7778','IMG_7783','IMG_7824','IMG_6969','IMG_7093','IMG_7545'] },
-  { title: 'Familia y amigos', files: ['IMG_4141','IMG_7253','IMG_4366','IMG_7433','IMG_7927','IMG_8534','IMG_7405','IMG_7427','IMG_7459','IMG_7482','IMG_7496'] },
-  { title: 'Recepción', files: ['IMG_7231','IMG_7658','IMG_7706','IMG_7826','IMG_8514','IMG_7362','IMG_7724','IMG_7734','IMG_7867'] },
-  { title: 'Fiesta', files: ['IMG_7404','IMG_7687','IMG_7882','IMG_7887','IMG_7896','IMG_7897'] },
-  { title: 'Detalles', files: ['IMG_7323','IMG_9731','IMG_7320'] },
+  { title: 'Presesión', files: ['IMG_9923','IMG_0072','IMG_0216','IMG_1447','IMG_1461','IMG_1489','IMG_1534','IMG_1552','IMG_1563','IMG_1584','IMG_1635','IMG_1695','IMG_1762','IMG_1816','IMG_0058','IMG_0158','IMG_0167','IMG_1730','IMG_0004','IMG_1544','IMG_1622','IMG_1713','IMG_0073','IMG_1603','IMG_1652','IMG_1742','IMG_1853','IMG_1955','IMG_7665'] },
+  { title: 'Preparativos', files: ['IMG_67601','IMG_67651','IMG_67971','IMG_68081'] },
+  { title: 'Ceremonia', files: ['IMG_4113','IMG_7378','IMG_4374','IMG_4220','IMG_4288','IMG_4488','IMG_7379','IMG_738','IMG_7346','IMG_7421','IMG_8522','IMG_8542','IMG_7003','IMG_7292','IMG_7285','IMG_7369','IMG_7413','IMG_8500','IMG_8577','IMG_3436','IMG_3529','IMG_3533','IMG_3586','IMG_3644'] },
+  { title: 'Sesión de pareja', files: ['IMG_3884','IMG_3891','IMG_3937','IMG_3942','IMG_3947','IMG_4000','IMG_4018','IMG_4076','IMG_7774','IMG_7778','IMG_7783','IMG_7824','IMG_6969','IMG_7093','IMG_7545','IMG_71201','IMG_71301','IMG_71981','IMG_7085','IMG_7237','IMG_7397'] },
+  { title: 'Familia y amigos', files: ['IMG_4141','IMG_7253','IMG_4366','IMG_7433','IMG_7927','IMG_8534','IMG_7405','IMG_7427','IMG_7459','IMG_7482','IMG_7496','IMG_4024'] },
+  { title: 'Recepción', files: ['IMG_7231','IMG_7658','IMG_7706','IMG_7826','IMG_8514','IMG_7362','IMG_7724','IMG_7734','IMG_7867','IMG_3959'] },
+  { title: 'Fiesta', files: ['IMG_7404','IMG_7687','IMG_7882','IMG_7887','IMG_7896','IMG_7897','IMG_4237','IMG_4260','IMG_4118'] },
+  { title: 'Detalles', files: ['IMG_7323','IMG_9731','IMG_7320','IMG_1722','IMG_3285','IMG_3286','IMG_3289','IMG_3295','IMG_3297'] },
 ];
 
 class Component extends DCLogic {
